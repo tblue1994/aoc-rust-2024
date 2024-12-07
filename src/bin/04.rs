@@ -1,12 +1,6 @@
 advent_of_code::solution!(4);
 
 pub fn part_one(input: &str) -> Option<u32> {
-    // let mut binding = input
-    //     .lines()
-    //     .map(|l| l.chars().collect::<Vec<char>>())
-    //     .map(Vec::as_slice)
-    //     .collect();
-    // let crossword: &mut [&mut [char]] = binding.as_mut_slice();
     let crossword: Vec<Vec<char>> = input.lines().map(|l| l.chars().collect()).collect();
     let mut count = 0;
     let search_term = &['X', 'M', 'A', 'S'];
