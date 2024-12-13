@@ -1,9 +1,9 @@
 use mathru::{
     algebra::linear::{
-        matrix::{General, LUDec, Solve},
+        matrix::{General, Solve},
         vector::Vector,
     },
-    matrix, vector,
+    vector,
 };
 use regex::Regex;
 advent_of_code::solution!(13);
@@ -96,6 +96,6 @@ mod tests {
     #[test]
     fn test_part_two() {
         let result = part_two(&advent_of_code::template::read_file("examples", DAY));
-        assert_eq!(result, Some(10396088751289990));
+        assert_eq!(result, Some(875318608908));
     }
 }
