@@ -76,7 +76,6 @@ pub fn solve(input: &str, oops: bool) -> Option<u128> {
             .into_iter()
             .map(|x| (x * 100.0).round() / 100.0)
             .collect();
-        println!("{:?}", x);
         if x[0].fract() == 0.0 && x[1].fract() == 0.0 {
             cost += (x[0] as u128 * 3) + x[1] as u128;
         }
