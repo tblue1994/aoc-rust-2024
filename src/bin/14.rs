@@ -12,7 +12,7 @@ pub fn test_one(input: &str) -> Option<u32> {
     solve_1(input, 11, 7)
 }
 
-pub fn test_two(input: &str) -> Option<u32> {
+pub fn test_two(_input: &str) -> Option<u32> {
     None
 }
 
