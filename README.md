@@ -10,8 +10,6 @@ Solutions for [Advent of Code](https://adventofcode.com/) in [Rust](https://www.
 
 ---
 
-✨ You can start solving puzzles now! Head to the [Usage section](#usage) to see how to use this template. If you like, you can configure [some optional features](#optional-template-features).
-
 ## Usage
 
 ### ➡️ Scaffold a day
