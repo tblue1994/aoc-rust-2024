@@ -32,7 +32,7 @@ pub fn parse(input: &str) -> Vec<Vec<u32>> {
     list1.sort();
     list2.sort();
     let vec = Vec::from([list1, list2]);
-    return vec;
+    vec
 }
 
 #[cfg(test)]

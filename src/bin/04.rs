@@ -59,12 +59,11 @@ pub fn part_two(input: &str) -> Option<u32> {
     let mut count = 0;
     for y in 1..crossword.len() - 1 {
         for x in 1..crossword[0].len() - 1 {
-            if crossword[y][x] == 'A' {
-                if is_mas((x + 1, y + 1), (x - 1, y - 1), &crossword)
-                    && is_mas((x - 1, y + 1), (x + 1, y - 1), &crossword)
-                {
-                    count += 1;
-                }
+            if crossword[y][x] == 'A'
+                && is_mas((x + 1, y + 1), (x - 1, y - 1), &crossword)
+                && is_mas((x - 1, y + 1), (x + 1, y - 1), &crossword)
+            {
+                count += 1;
             }
         }
     }
@@ -72,9 +71,9 @@ pub fn part_two(input: &str) -> Option<u32> {
     Some(count)
 }
 
-pub fn is_mas(a: (usize, usize), b: (usize, usize), crossword: &Vec<Vec<char>>) -> bool {
-    return (crossword[a.1][a.0] == 'M' && crossword[b.1][b.0] == 'S')
-        || (crossword[a.1][a.0] == 'S' && crossword[b.1][b.0] == 'M');
+pub fn is_mas(a: (usize, usize), b: (usize, usize), crossword: &[Vec<char>]) -> bool {
+    (crossword[a.1][a.0] == 'M' && crossword[b.1][b.0] == 'S')
+        || (crossword[a.1][a.0] == 'S' && crossword[b.1][b.0] == 'M')
 }
 
 pub fn contains_search(
@@ -105,7 +104,7 @@ pub fn contains_search(
             &search_term[1..],
         );
     }
-    return 0;
+    0
 }
 
 #[cfg(test)]

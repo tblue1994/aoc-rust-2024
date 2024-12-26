@@ -21,8 +21,8 @@ pub fn part_two(input: &str) -> Option<u32> {
     let mut christmas_time = 0;
     for i in 1..i32::MAX {
         let mut positions_at_time: HashMap<i32, Vec<i32>> = HashMap::new();
-        for x in 0..guards.len() {
-            let (pos, vector) = guards[x];
+        for guard in &guards {
+            let (pos, vector) = guard;
             let new_x = (pos.0 + (vector.0 * i)).rem_euclid(101);
             let new_y = (pos.1 + (vector.1 * i)).rem_euclid(103);
             positions_at_time

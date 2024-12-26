@@ -82,7 +82,7 @@ pub fn part_two_bad(input: &str) -> Option<u128> {
         match instruction {
             0 => register_a = Box::new(register_a.as_ref() * 2_u128.pow(operand_value as u32)),
             1 => register_b = Box::new(register_b.as_ref() ^ operand as u128),
-            2 => register_b = Box::new((operand_value % 8) as u128),
+            2 => register_b = Box::new(operand_value % 8),
             3 => {
                 if output_to_match < 0 {
                     break;
@@ -168,8 +168,8 @@ pub fn run_program(register_a_val: u128, program: &[u32]) -> Vec<u32> {
         };
 
         match instruction {
-            0 => register_a = register_a / 2_u128.pow(operand_value as u32),
-            1 => register_b = register_b ^ operand as u128,
+            0 => register_a /= 2_u128.pow(operand_value as u32),
+            1 => register_b ^= operand as u128,
             2 => register_b = operand_value % 8,
             3 => {
                 if register_a != 0 {
@@ -177,7 +177,7 @@ pub fn run_program(register_a_val: u128, program: &[u32]) -> Vec<u32> {
                     continue;
                 }
             } //jumps to literal
-            4 => register_b = register_b ^ register_c,
+            4 => register_b ^= register_c,
             5 => output.push((operand_value % 8) as u32),
             6 => register_b = register_a / 2_u128.pow(operand_value as u32),
             7 => register_c = register_a / 2_u128.pow(operand_value as u32),

@@ -51,9 +51,9 @@ pub fn get_numpad_move(current: char, dest: char) -> Vec<(char, i128)> {
     ]);
     let current_loc = numpad_locations.get(&current).unwrap();
     let dest_loc = numpad_locations.get(&dest).unwrap();
-    let vert_first = vec!['A', '0'].contains(&current) && vec!['1', '4', '7'].contains(&dest)
+    let vert_first = ['A', '0'].contains(&current) && ['1', '4', '7'].contains(&dest)
         || (current_loc.0 - dest_loc.0 > 0
-            && !(vec!['A', '0'].contains(&dest) && vec!['1', '4', '7'].contains(&current)));
+            && !(['A', '0'].contains(&dest) && ['1', '4', '7'].contains(&current)));
     if vert_first {
         let v: i128 = current_loc.1 - dest_loc.1;
         if v < 0 {
@@ -148,8 +148,8 @@ pub fn get_arrowpad_move(current: char, dest: char) -> Vec<(char, i128)> {
     let mut dirs = vec![];
     let current_loc = arrow_locations.get(&current).unwrap();
     let dest_loc = arrow_locations.get(&dest).unwrap();
-    let vert_first = vec!['A', '^'].contains(&current) && vec!['<'].contains(&dest)
-        || (current_loc.0 - dest_loc.0 > 0 && !vec!['<'].contains(&current));
+    let vert_first = ['A', '^'].contains(&current) && ['<'].contains(&dest)
+        || (current_loc.0 - dest_loc.0 > 0 && !['<'].contains(&current));
     if vert_first {
         let v: i128 = current_loc.1 - dest_loc.1;
         if v < 0 {

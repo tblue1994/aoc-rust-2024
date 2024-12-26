@@ -50,7 +50,7 @@ pub fn part_two(input: &str) -> Option<u32> {
         }
     }
 
-    Some(*best_hash.values().into_iter().max()?)
+    Some(*best_hash.values().max()?)
 
     // let mut best_bananas = 0;
     // for i in 0..best_hashes.len() {

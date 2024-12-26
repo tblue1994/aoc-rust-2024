@@ -83,7 +83,7 @@ pub fn part_two(input: &str) -> Option<u32> {
     }
 
     // go through and find x, y and z for w/e
-    let mut current_carry = gates
+    let current_carry = gates
         .iter()
         .find(|g| {
             g.op == "AND" && HashSet::from(["x00".to_string(), "y00".to_string()]) == g.gates
@@ -217,8 +217,8 @@ pub fn find_gate(
             .find(|g| g.op == op && g.result == result.unwrap());
     }
 
-    if gate.is_some() {
-        Some(gate.unwrap().clone())
+    if let Some(gate) = gate {
+        Some(gate.clone())
     } else {
         None
     }
